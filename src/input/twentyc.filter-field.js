@@ -59,7 +59,7 @@ twentyc.jq.plugin(
         if(!status) {
           me.find('[data-filter-value]').each(function(idx_2) {
             var val = $(this).data("filter-value");
-            if(val.toLowerCase().indexOf(value) > -1) {
+            if(val && val.toLowerCase().indexOf(value) > -1) {
               status = true;
             }
           });
