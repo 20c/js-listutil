@@ -29,7 +29,12 @@ twentyc.jq.plugin(
     
           var target = $(me.data("filter-target"));
           var callback = function() {
-            target.children(opt.rowSelector).filterInput("test", me.val().toLowerCase());
+            var n = target.children(opt.rowSelector).filterInput("test", me.val().toLowerCase());
+            console.log(n);
+            if(n)
+              target.children(".empty-result").first().hide();
+            else
+              target.children(".empty-result").first().show();
           }
     
           me.data("filter-initialized", true);
@@ -49,6 +54,7 @@ twentyc.jq.plugin(
     
     },
     test : function(value) {
+      var n = 0;
       this.each(function(idx) {
         var me = $(this);
         var myvalue = me.data("filter-value")
@@ -64,11 +70,16 @@ twentyc.jq.plugin(
             }
           });
         }
-        if(status)
+        if(status) {
           me.show();
-        else
+          n++;
+        } else
           me.hide();
+        
       });
+
+      return n;
+
     }
   },
   {
