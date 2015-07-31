@@ -37,7 +37,6 @@ twentyc.jq.plugin(
               target.children(".empty-result").first().show();
           }
     
-          me.data("filter-initialized", true);
           me.data(
             "filter-timeout", 
             new tc.u.SmartTimeout(
@@ -49,6 +48,15 @@ twentyc.jq.plugin(
           me.keyup(function(e) {
             me.data("filter-timeout").set(callback, opt.interval);
           });
+
+          if(!target.children(".empty-result").length) {
+            var erNode = $('<div class="empty-result"></div>');
+            erNode.hide();
+            erNode.html(opt.emptyResultMessage);
+            target.prepend(erNode);
+          }
+
+          me.data("filter-initialized", true);
         }
       });
     
@@ -85,6 +93,7 @@ twentyc.jq.plugin(
     }
   },
   {
+    emptyResultMessage : "Nothing matched your filter",
     rowSelector : ".row",
     interval : 100
   }
