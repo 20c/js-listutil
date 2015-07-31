@@ -1,3 +1,15 @@
+.sort-desc:after {
+  content : '\1F53C';
+}
+
+.sort-asc:after {
+  content : '\1F53D';
+}
+
+*[data-sort-target] {
+  cursor: pointer;
+}
+
 div.list {
   width: 310px;
 }

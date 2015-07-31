@@ -58,20 +58,28 @@ twentyc.jq.plugin(
             list.sortable("sort", button.data("sort-target"), button);
           });
 
+          if(button.data("sort-initial")) {
+            list.sortable("sort", button.data("sort-target"), button, button.data("sort-initial"));
+          }
+
         });
+
 
       });
       return this;
 
     },
 
-    sort : function(target, button) {
+    sort : function(target, button, sortdir) {
       
-      var sortdir = button.data("sort-dir");
-      if(!sortdir || sortdir == "desc")
-        sortdir = "asc";
-      else
-        sortdir = "desc";
+      if(sortdir == undefined) {
+        sortdir = button.data("sort-dir");
+      
+        if(!sortdir || sortdir == "desc")
+          sortdir = "asc";
+        else
+          sortdir = "desc";
+      }
 
       var sorter = twentyc.listutil.sortable.sorter(sortdir);
 
