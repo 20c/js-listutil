@@ -1,0 +1,38 @@
+div.list {
+  width: 310px;
+}
+div.list div.row > div:nth-child(1) {
+  display: inline-block;
+  width: 200px;
+  border-right: 1px black solid;
+}
+
+div.list div.row > div:nth-child(2) {
+  display: inline-block;
+  width: 100px;
+}
+
+div.list div.row.head {
+  font-weight: bold;
+  padding: 0px;
+}
+
+tr th:nth-child(1),
+tr td:nth-child(1) {
+  width: 200px;
+  border-right: 1px black solid;
+}
+tr th:nth-child(2),
+tr td:nth-child(2) {
+  width: 100px;
+}
+
+th {
+  text-align: left;
+}
+
+td,
+th,
+div.list div.row {
+  border-bottom: 1px black solid;
+}

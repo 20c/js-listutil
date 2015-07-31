@@ -1,2 +1,2 @@
-# js-widgets
-Assortment of UI widgets for web applications
+# js-listutil
+Assortment of content listing utilities; sort; filter etc.

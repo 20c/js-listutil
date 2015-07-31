@@ -9,9 +9,9 @@
 
 (function($) {
 
-tc.u.require_namespace("twentyc.widgets");
+tc.u.require_namespace("twentyc.listutil");
 
-twentyc.widgets.filter_input = {
+twentyc.listutil.filter_input = {
   init : function(opt) {
     $('[data-filter-target]').filterInput(opt);
   }

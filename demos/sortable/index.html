@@ -1,0 +1,69 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+  <title>20c sortable demo</title>
+  <script src="//code.jquery.com/jquery-1.11.3.min.js" type="text/javascript"></script>
+  <script src="../../src/twentyc.core.js" type="text/javascript"></script>
+  <script src="../../src/twentyc.sortable.js" type="text/javascript"></script>
+  <script src="demo.js" type="text/javascript"></script>
+  <link href="demo.css" type="text/css" rel="stylesheet" />
+  </head>
+  <body>
+    
+    <h3>Table</h3>
+    <table data-sort-container="tbody" data-sort-row=".row">
+      <thead>
+        <tr>
+          <th data-sort-target=".name">Name</th>
+          <th data-sort-target=".age">Age</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="row">
+          <td class="name" data-sort-value="Green Dragon">Green Dragon</td>
+          <td class="age" data-sort-value="1200">1200</td>
+        </tr>
+        <tr class="row">
+          <td class="name" data-sort-value="Red Dragon">Red Dragon</td>
+          <td class="age" data-sort-value="200">200</td>
+        </tr>
+        <tr class="row">
+          <td class="name" data-sort-value="Cyclops">Cyclops</td>
+          <td class="age" data-sort-value="3000">3000</td>
+        </tr>
+        <tr class="row">
+          <td class="name" data-sort-value="Red Cyclops">Red Cyclops</td>
+          <td class="age" data-sort-value="10000">10000</td>
+        </tr>
+      </tbody>
+    </table>
+    
+    <h3>Div Grid</h3>
+    <div class="list" data-sort-container=".content" data-sort-row=".row">
+      <div class="row head">
+        <div data-sort-target=".name">Name</div>
+        <div data-sort-target=".age">Age</div>
+      </div>
+
+      <div class="content">
+        <div class="row">
+          <div class="name" data-sort-value="Green Dragon">Green Dragon</div>
+          <div class="age" data-sort-value="1200">1200</div>
+        </div>
+        <div class="row">
+          <div class="name" data-sort-value="Red Dragon">Red Dragon</div>
+          <div class="age" data-sort-value="200">200</div>
+        </div>
+        <div class="row">
+          <div class="name" data-sort-value="Cylops">Cyclops</div>
+          <div class="age" data-sort-value="3000">3000</div>
+        </div>
+        <div class="row">
+          <div class="name" data-sort-value="Red Cyclops">Red Cyclops</div>
+          <div class="age" data-sort-value="10000">10000</div>
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>
