@@ -84,7 +84,6 @@ twentyc.jq.plugin(
       var sorter = twentyc.listutil.sortable.sorter(sortdir);
 
       button.data("sort-dir", sortdir);
-      console.log("SORT", sortdir);
 
       this.each(function(idx) {
         var list = $(this);

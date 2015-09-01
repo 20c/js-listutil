@@ -30,7 +30,6 @@ twentyc.jq.plugin(
           var target = $(me.data("filter-target"));
           var callback = function() {
             var n = target.children(opt.rowSelector).filterInput("test", me.val().toLowerCase());
-            console.log(n);
             if(n)
               target.children(".empty-result").first().hide();
             else
