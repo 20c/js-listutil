@@ -70,6 +70,19 @@ twentyc.jq.plugin(
 
     },
 
+    sortInitial : function() {
+      this.each(function(idx) {
+        var list = $(this);
+        list.find("[data-sort-target]").each(function(idx) {
+          var button = $(this);
+          if(button.data("sort-initial")) {
+            list.sortable("sort", button.data("sort-target"), button, button.data("sort-initial"));
+          }
+        });
+      });
+      return this;
+    },
+
     sort : function(target, button, sortdir) {
       
       if(sortdir == undefined) {
