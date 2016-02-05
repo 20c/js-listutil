@@ -35,6 +35,8 @@ twentyc.jq.plugin(
             else
               target.children(".empty-result").first().show();
           }
+
+          me.data("filter-callback", callback);
     
           me.data(
             "filter-timeout", 
@@ -89,6 +91,13 @@ twentyc.jq.plugin(
 
       return n;
 
+    },
+    'retest' : function() {
+      this.each(function(idx) {
+        var me = $(this);
+        var fn = me.data("filter-callback")
+        fn();
+      });
     }
   },
   {
